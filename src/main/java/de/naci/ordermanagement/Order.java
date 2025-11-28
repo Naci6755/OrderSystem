@@ -7,7 +7,7 @@ public class Order {
     // COMPLETED,FAILED → enums!)
     private int orderID;
     private List<Product> products;
-    private Map<Integer, Product> quantity;
+    private Map<Product, Integer> quantity;
     private Status status;
 
     public Order(int orderID, Status status) {
@@ -25,7 +25,7 @@ public class Order {
     public double totalPrice() {
         double count = 0.00;
         for (Product p : products) {
-            count = p.getStockQuantity() * p.getPrice();
+            count += p.getStockQuantity() * p.getPrice();
         }
         return count;
     }
@@ -39,4 +39,11 @@ public class Order {
        this.status=s;
     }
 
+    public List<Product> getProducts(){
+        return this.products;
+    }
+
+    public Map<Product, Integer> getQuantity(){
+        return this.quantity;
+    }
 }
