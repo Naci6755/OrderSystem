@@ -17,7 +17,8 @@ public class Order {
         this.status = status;
     }
 
-    public void addProduct(Product p){
+    public void addProduct(Product p) {
+        this.quantity.put(p, 1);
         products.add(p);
     }
 
@@ -30,20 +31,24 @@ public class Order {
         return count;
     }
 
-    public Status getStatus(){
+    public Status getStatus() {
         return this.status;
     }
 
-    //zur Statusaenderung
-    public void setStatus(Status s){
-       this.status=s;
+    // zur Statusaenderung
+    public void setStatus(Status s) {
+        this.status = s;
     }
 
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return this.products;
     }
 
-    public Map<Product, Integer> getQuantity(){
+    public Map<Product, Integer> getQuantity() {
         return this.quantity;
+    }
+
+    public int getOrderId(){
+        return this.getOrderId();
     }
 }

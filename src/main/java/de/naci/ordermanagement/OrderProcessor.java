@@ -1,6 +1,5 @@
 package de.naci.ordermanagement;
 
-import java.util.Map;
 
 public class OrderProcessor extends Thread {
     private Order order;
