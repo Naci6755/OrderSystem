@@ -30,4 +30,13 @@ public class Order {
         return count;
     }
 
+    public Status getStatus(){
+        return this.status;
+    }
+
+    //zur Statusaenderung
+    public void setStatus(Status s){
+       this.status=s;
+    }
+
 }
