@@ -20,4 +20,8 @@ public class Product {
         }
         this.stockQuantity-=amount;
     }
+
+    public int getStockQuantity(){
+        return this.stockQuantity;
+    }
 }
