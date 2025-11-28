@@ -7,21 +7,25 @@ public class Order {
     // COMPLETED,FAILED → enums!)
     private int orderID;
     private List<Product> products;
-    private Product quantity;
+    private Map<Integer, Product> quantity;
     private Status status;
 
-    public Order(int orderID, Product quantity, Status status) {
+    public Order(int orderID, Status status) {
         this.orderID = orderID;
         this.products = new ArrayList<>();
-        this.quantity = quantity;
+        this.quantity = new HashMap<>();
         this.status = status;
+    }
+
+    public void addProduct(Product p){
+        products.add(p);
     }
 
     // Methode zum Berechnen des Gesamtpreises
     public double totalPrice() {
-        double count = 0;
+        double count = 0.00;
         for (Product p : products) {
-            count += p.getStockQuantity() * p.getPrice();
+            count = p.getStockQuantity() * p.getPrice();
         }
         return count;
     }
