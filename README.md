@@ -21,5 +21,4 @@ Ein Bestellsystem in Java mit Threads, Lagerverwaltung und JUnit-Tests.
 - Tests in `src/test/java` können mit Maven ausgeführt werden:
   mvn test
 
-## Lizenz
-(Optional, falls du willst)
+
